@@ -3,7 +3,7 @@
 <suite name="Suite">
     <test name="Test">
         <classes>
-            <class name="TestBase.AndroidRun" />
+            <class name="TestBase.SwagAppRun" />
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

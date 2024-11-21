@@ -1,12 +1,12 @@
-package pagedefinition;
+package pagedefinition_ApiDemo;
 
-import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
-import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
 
 public class ApiDemoModuleIos {
     private IOSDriver driver;
@@ -25,6 +25,8 @@ public class ApiDemoModuleIos {
     @iOSXCUITFindBy(xpath = "")
     public static WebElement btn_name;
 
+    @iOSXCUITFindBy(xpath = "")
+    public static List<WebElement> btn_names;
 
     public boolean validatebutton(){
         return btn_name.isDisplayed();

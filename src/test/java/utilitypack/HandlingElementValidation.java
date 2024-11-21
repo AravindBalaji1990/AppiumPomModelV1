@@ -10,6 +10,8 @@ import java.util.Calendar;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
@@ -80,6 +82,11 @@ public class HandlingElementValidation {
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 	}
 
+	public static void expectedconditionWebElement(AppiumDriver driver, WebElement locator, long seconds) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+		wait.until(ExpectedConditions.visibilityOf(locator));
+	}
+
 	public static void scrollintoview(WebDriver driver, WebElement element) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();", element);
@@ -114,5 +121,11 @@ public class HandlingElementValidation {
 		OR = new Properties(System.getProperties());
 		OR.load(fs);
 		return OR;
+	}
+
+
+	public static int waitForElmentSize(AndroidDriver driver, long seconds, By locator, int num){
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+		return wait.until(ExpectedConditions.numberOfElementsToBe(locator, num)).size();
 	}
 }
