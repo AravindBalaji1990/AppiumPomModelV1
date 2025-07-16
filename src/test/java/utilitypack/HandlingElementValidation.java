@@ -29,7 +29,7 @@ import org.slf4j.LoggerFactory;
 
 public class HandlingElementValidation {
 	private static final Logger log = LoggerFactory.getLogger(HandlingElementValidation.class);
-
+	public static AppiumDriver driver;
 	public static Properties OR;
 	public static boolean ElementPresent(WebDriver driver, WebElement element) {
 		if (element.isDisplayed() == true && element.isEnabled() == true) {
@@ -128,4 +128,9 @@ public class HandlingElementValidation {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
 		return wait.until(ExpectedConditions.numberOfElementsToBe(locator, num)).size();
 	}
+	public static int waitForElmentSizeMinimum(AndroidDriver driver, long seconds, By locator, int num){
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+		return wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(locator, num)).size();
+	}
+
 }

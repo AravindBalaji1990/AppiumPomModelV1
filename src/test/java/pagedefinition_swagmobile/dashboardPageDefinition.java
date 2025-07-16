@@ -8,27 +8,26 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import pageobjectsLoginPage.dashboardPageElements;
 import utilitypack.CommonUtils;
 import utilitypack.HandlingElementValidation;
 
 import java.util.List;
 
-public class dashboardPageDefinition {
+public class dashboardPageDefinition extends dashboardPageElements {
+    //Merged the locator and the logics for the lcoator in same class
+    // this way as well we can use
     public AndroidDriver driver;
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text=\"PRODUCTS\"]")
-    static List<WebElement> lbl_products;
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text=\"PRODUCTS\"]")
-    static WebElement lbl_product;
-
-    public dashboardPageDefinition(AndroidDriver driver){
+    public dashboardPageDefinition(AndroidDriver driver) {
+        super(driver);
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
-    public void validateDashgboard(){
+    public void validateDashgboard() {
         HandlingElementValidation.waitForElmentSize(driver, 60, AppiumBy.xpath("//android.widget.TextView[@text=\"PRODUCTS\"]"), 1);
-        Assert.assertTrue(lbl_products.size()>0);
+        Assert.assertTrue(lbl_products.size() > 0);
     }
 
 }

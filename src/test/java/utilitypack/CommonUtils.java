@@ -83,7 +83,6 @@ public class CommonUtils {
 		options.setAppWaitForLaunch(true);
 		serverUrl = new URL("http://0.0.0.0:4723");
 		driver = new AndroidDriver(serverUrl, options);
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		return driver;
 	}
 	
@@ -121,7 +120,6 @@ public class CommonUtils {
 		options.setBundleId("com.moataz.dailycheck");
 		serverUrl = new URL("http://localhost:4723");
 		driver = new IOSDriver(serverUrl, options);
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		return driver;
 	}
 }
