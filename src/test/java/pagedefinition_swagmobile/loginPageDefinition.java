@@ -12,11 +12,13 @@ import pageobjectsLoginPage.loginPageElements;
 import static pageobjectsLoginPage.loginPageElements.*;
 
 public class loginPageDefinition extends loginPageElements{
+    // the action and validaiton that we will be doing in the application
     private static final Logger logger = LoggerFactory.getLogger(loginPageDefinition.class);
     public AndroidDriver driver;
 
     public loginPageDefinition(AndroidDriver driver){
         super(driver);
+        //pageFactory.initElements - will initalise the object or instance that willbe avialabl eonthe particular class that it exists
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 

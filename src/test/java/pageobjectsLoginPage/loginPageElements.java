@@ -15,6 +15,7 @@ public class loginPageElements extends SwagAppRun {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 
     }
+
     @AndroidFindBy(xpath = "//android.widget.EditText[@content-desc=\"test-Username\"]")
     public static WebElement txt_username;
 
