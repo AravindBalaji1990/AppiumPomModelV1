@@ -28,7 +28,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-api</artifactId>
-            <version>4.38.0</version>
+            <version>4.41.0</version>
             <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
@@ -98,8 +98,8 @@
                 <version>3.7.0</version>
                 <configuration>
                     <!-- <compilerVersion>1.8</compilerVersion> -->
-                    <source>17</source>
-                    <target>17</target>
+                    <source>21</source>
+                    <target>21</target>
                 </configuration>
             </plugin>
             <plugin>

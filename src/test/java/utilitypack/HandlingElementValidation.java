@@ -20,7 +20,7 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.io.FileHandler;
+//import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -109,8 +109,8 @@ public class HandlingElementValidation {
 
 		TakesScreenshot takescreenshot = (TakesScreenshot) driver;
 		File source = takescreenshot.getScreenshotAs(OutputType.FILE);
-		FileHandler.copy(source,
-				new File(dirname + "/" + Screenshotname + "_" + df.format(calobj.getTime()) + ".jpeg"));
+//		FileHandler.copy(source,
+//				new File(dirname + "/" + Screenshotname + "_" + df.format(calobj.getTime()) + ".jpeg"));
 	}
 	
 
